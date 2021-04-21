@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="productsPane" fx:id="productsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: wheat;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.ProductsController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: darkslategray;" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="btnAddProduct" fx:id="btnAddProduct" layoutX="20.0" layoutY="104.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: beige;" text="Add product">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <InnerShadow radius="7.25" width="10.0" />
+               </effect>
+            </Button>
+            <Button id="btnEditProduct" fx:id="btnEditProduct" layoutX="20.0" layoutY="157.0" mnemonicParsing="false" onAction="#editProduct" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: beige;" text="Edit product">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <InnerShadow radius="7.25" width="10.0" />
+               </effect>
+            </Button>
+            <Button id="btnDeleteProduct" fx:id="btnDeleteProduct" layoutX="20.0" layoutY="210.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: beige;" text="Delete product">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <InnerShadow radius="7.25" width="10.0" />
+               </effect>
+            </Button>
+            <Button id="btnViewProductsTable" fx:id="btnViewProductsTable" layoutX="20.0" layoutY="263.0" mnemonicParsing="false" onAction="#viewProductsTable" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: beige;" text="View products table">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <InnerShadow radius="7.25" width="10.0" />
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
