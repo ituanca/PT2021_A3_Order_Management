@@ -12,7 +12,6 @@ public class ProductsController {
     public Button btnEditProduct;
     public Button btnDeleteProduct;
     public Button btnViewProductsTable;
-    public Button btnGoBack;
 
     public void addProduct(ActionEvent actionEvent) {
         FxmlLoader object = new FxmlLoader();
@@ -27,12 +26,15 @@ public class ProductsController {
     }
 
     public void deleteProduct(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("deleteProduct");
+        productsPane.setCenter(view);
     }
 
     public void viewProductsTable(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("tableProducts");
+        productsPane.setCenter(view);
     }
 
-    public void goBack(ActionEvent actionEvent) {
-        productsPane.setVisible(false);
-    }
 }

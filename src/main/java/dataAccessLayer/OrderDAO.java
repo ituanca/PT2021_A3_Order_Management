@@ -1,14 +1,5 @@
 package dataAccessLayer;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud;
-import connection.ConnectionFactory;
-import model.Order;
-import model.Student;
-
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class OrderDAO {
 
 //    protected static final Logger LOGGER = Logger.getLogger(StudentDAO.class.getName());

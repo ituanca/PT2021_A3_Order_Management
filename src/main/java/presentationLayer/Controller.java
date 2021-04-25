@@ -26,4 +26,10 @@ public class Controller {
         Pane view = object.getPage("products");
         mainPane.setCenter(view);
     }
+
+    public void manageOrders(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("orders");
+        mainPane.setCenter(view);
+    }
 }

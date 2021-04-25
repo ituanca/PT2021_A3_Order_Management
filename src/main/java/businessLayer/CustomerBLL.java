@@ -7,6 +7,7 @@ import dataAccessLayer.CustomerDAO;
 
 import dataAccessLayer.ProductDAO;
 import model.Customer;
+import model.Product;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -73,8 +74,16 @@ public class CustomerBLL {
         return -1;
     }
 
+    public int deleteCustomer(Customer customer) throws SQLException {
+        return CustomerDAO.deleteCustomer(customer);
+    }
+
     public ArrayList<String> getNames() throws SQLException {
         return  CustomerDAO.selectNames();
+    }
+
+    public ArrayList<Customer> getCustomers() throws SQLException {
+        return CustomerDAO.findAll();
     }
 
 }

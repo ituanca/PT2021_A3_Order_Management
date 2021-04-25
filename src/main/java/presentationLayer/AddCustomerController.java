@@ -17,7 +17,6 @@ public class AddCustomerController {
     public TextField tfPhone;
     public TextField tfEmail;
     public Button btnAddCustomer;
-    public Button btnGoBack;
 
     Customer customer;
     CustomerBLL customerBLL;

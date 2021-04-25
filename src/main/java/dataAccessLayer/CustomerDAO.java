@@ -2,6 +2,7 @@ package dataAccessLayer;
 
 import connection.ConnectionFactory;
 import model.Customer;
+import model.Product;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,18 +10,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CustomerDAO {
-
-    protected static final Logger LOGGER = Logger.getLogger(StudentDAO.class.getName());
+    protected static final Logger LOGGER = Logger.getLogger(CustomerDAO.class.getName());
     private static final String insertStatementString = "INSERT INTO customers (name,address,city,phone,email)" + " VALUES (?,?,?,?,?)";
     private final static String findStatementString = "SELECT * FROM customers where id = ?";
     private final static String findByNameStatementString = "SELECT * FROM customers where name = ?";
     private final static String findNamesStatementString = "SELECT name FROM customers";
     private final static String updateStatementString = "UPDATE customers SET name = ?, address = ?, city = ?, phone = ?, email = ? WHERE id = ?";
+    private final static String deleteStatementString = "DELETE FROM customers WHERE id = ?";
+    private final static String findAllStatementString = "SELECT * FROM customers";
 
     public static int updateCustomer(Customer customer) throws SQLException {
         Connection dbConnection = ConnectionFactory.getConnection();
         PreparedStatement updateStatement = null;
-        int updatedId = -1;
+        int successfullyUpdated = 0;
         try {
             updateStatement = dbConnection.prepareStatement(updateStatementString, Statement.RETURN_GENERATED_KEYS);
             updateStatement.setString(1, customer.getName());
@@ -30,12 +32,7 @@ public class CustomerDAO {
             updateStatement.setString(5, customer.getEmail());
             updateStatement.setInt(6, customer.getId());
             System.out.println("id: " + customer.getId());
-            updateStatement.executeUpdate();
-
-            ResultSet rs = updateStatement.getGeneratedKeys();
-            if (rs.next()) {
-                updatedId = rs.getInt(1);
-            }
+            successfullyUpdated =  updateStatement.executeUpdate();
         } catch (SQLException e) {
             LOGGER.log(Level.WARNING,"CustomerDAO:update " + e.getMessage());
             System.out.println("CustomerDAO:update" + e.getMessage());
@@ -43,8 +40,25 @@ public class CustomerDAO {
             ConnectionFactory.close(updateStatement);
             ConnectionFactory.close(dbConnection);
         }
-        System.out.println("updatedId" + updatedId);
-        return updatedId;
+        return successfullyUpdated;
+    }
+
+    public static int deleteCustomer(Customer customer) throws SQLException {
+        Connection dbConnection = ConnectionFactory.getConnection();
+        PreparedStatement deleteStatement = null;
+        int successfullyDeleted = 0;
+        try {
+            deleteStatement = dbConnection.prepareStatement(deleteStatementString, Statement.RETURN_GENERATED_KEYS);
+            deleteStatement.setInt(1, customer.getId());
+            successfullyDeleted = deleteStatement.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.log(Level.WARNING,"CustomerDAO:delete " + e.getMessage());
+            System.out.println("CustomerDAO:delete" + e.getMessage());
+        } finally {
+            ConnectionFactory.close(deleteStatement);
+            ConnectionFactory.close(dbConnection);
+        }
+        return successfullyDeleted;
     }
 
     public static ArrayList<String> selectNames() throws SQLException {
@@ -69,8 +83,38 @@ public class CustomerDAO {
         return names;
     }
 
-    public Customer findByName(String customerName) throws SQLException {
+    public static ArrayList<Customer> findAll() throws SQLException {
+        ArrayList<Customer> customers = new ArrayList<>();
+        Connection dbConnection = ConnectionFactory.getConnection();
+        PreparedStatement findAllStatement = null;
+        ResultSet resultSet = null;
+        try {
+            findAllStatement = dbConnection.prepareStatement(findAllStatementString);
+            resultSet = findAllStatement.executeQuery();
+            while(resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String address = resultSet.getString("address");
+                String city = resultSet.getString("city");
+                String phone = resultSet.getString("phone");
+                String email = resultSet.getString("email");
 
+                Customer customer = new Customer( id, name, address, city, phone, email);
+                System.out.println(customer.toString());
+                customers.add(customer);
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.WARNING,"CustomerDAO:find all " + e.getMessage());
+            System.out.println("CustomerDAO:find all " + e.getMessage());
+        } finally {
+            ConnectionFactory.close(resultSet);
+            ConnectionFactory.close(findAllStatement);
+            ConnectionFactory.close(dbConnection);
+        }
+        return customers;
+    }
+
+    public Customer findByName(String customerName) throws SQLException {
         Customer customer = null;
         Connection dbConnection = ConnectionFactory.getConnection();
         PreparedStatement findStatement = null;
@@ -101,12 +145,10 @@ public class CustomerDAO {
     }
 
     public Customer findById(int customerID) throws SQLException {
-
         Customer customer = null;
         Connection dbConnection = ConnectionFactory.getConnection();
         PreparedStatement findStatement = null;
         ResultSet resultSet = null;
-
         try {
             findStatement = dbConnection.prepareStatement(findStatementString);
             findStatement.setLong(1, customerID);
@@ -157,5 +199,4 @@ public class CustomerDAO {
         }
         return insertedId;
     }
-
 }

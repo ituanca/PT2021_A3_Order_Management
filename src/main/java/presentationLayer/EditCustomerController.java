@@ -3,10 +3,7 @@ package presentationLayer;
 import businessLayer.CustomerBLL;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import model.Customer;
 
 import java.net.URL;
@@ -17,13 +14,17 @@ import java.util.ResourceBundle;
 public class EditCustomerController implements Initializable {
 
     public ComboBox cbName;
-    public Button btnEditCustomer;
     public TextField tfName;
     public TextField tfAddress;
     public TextField tfCity;
     public TextField tfPhone;
     public TextField tfEmail;
     public Button btnUpdate;
+    public Label lblName;
+    public Label lblAddress;
+    public Label lblCity;
+    public Label lblPhone;
+    public Label lblEmail;
 
     Customer customer;
     CustomerBLL customerBLL;
@@ -33,19 +34,24 @@ public class EditCustomerController implements Initializable {
         return customerBLL.getNames();
     }
 
-    public void selectCustomer(ActionEvent actionEvent) {
-        btnEditCustomer.setVisible(true);
-        tfName.setText("");
-        tfAddress.setText("");
-        tfCity.setText("");
-        tfPhone.setText("");
-        tfEmail.setText("");
-        tfName.setEditable(false);
-        tfAddress.setEditable(false);
-        tfCity.setEditable(false);
-        tfPhone.setEditable(false);
-        tfEmail.setEditable(false);
-        btnUpdate.setVisible(false);
+    public void selectCustomer(ActionEvent actionEvent) throws SQLException {
+        lblName.setVisible(true);
+        lblAddress.setVisible(true);
+        lblCity.setVisible(true);
+        lblPhone.setVisible(true);
+        lblEmail.setVisible(true);
+        tfName.setVisible(true);
+        customer = customerBLL.findCustomerByName((String) cbName.getValue());
+        tfName.setText(customer.getName());
+        tfAddress.setText(customer.getAddress());
+        tfCity.setText(customer.getCity());
+        tfPhone.setText(customer.getPhone());
+        tfEmail.setText(customer.getEmail());
+        tfAddress.setVisible(true);
+        tfCity.setVisible(true);
+        tfPhone.setVisible(true);
+        tfEmail.setVisible(true);
+        btnUpdate.setVisible(true);
     }
 
     @Override
@@ -55,21 +61,6 @@ public class EditCustomerController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    public void editCustomer(ActionEvent actionEvent) throws SQLException {
-        customer = customerBLL.findCustomerByName((String) cbName.getValue());
-        tfName.setText(customer.getName());
-        tfAddress.setText(customer.getAddress());
-        tfCity.setText(customer.getCity());
-        tfPhone.setText(customer.getPhone());
-        tfEmail.setText(customer.getEmail());
-        tfName.setEditable(true);
-        tfAddress.setEditable(true);
-        tfCity.setEditable(true);
-        tfPhone.setEditable(true);
-        tfEmail.setEditable(true);
-        btnUpdate.setVisible(true);
     }
 
     public void update(ActionEvent actionEvent) throws SQLException {

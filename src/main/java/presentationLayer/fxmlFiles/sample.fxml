@@ -9,7 +9,7 @@
 
 <BorderPane id="mainPane" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: wheat;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.Controller">
    <top>
-      <Label prefHeight="112.0" prefWidth="296.0" text="Order management" textFill="#791010" BorderPane.alignment="CENTER">
+      <Label prefHeight="112.0" prefWidth="296.0" text="Order management" BorderPane.alignment="CENTER">
          <font>
             <Font size="34.0" />
          </font>
@@ -18,34 +18,34 @@
    <center>
       <AnchorPane prefHeight="428.0" prefWidth="633.0" style="-fx-background-color: wheat;" BorderPane.alignment="CENTER" />
    </center>
-   <left>
-      <Button id="btnCustomers" fx:id="btnCustomers" mnemonicParsing="false" onAction="#manageCustomers" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Customers" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <effect>
-            <InnerShadow height="11.5" radius="4.875" width="10.0" />
-         </effect>
-      </Button>
-   </left>
-   <right>
-      <Button id="btnProducts" fx:id="btnProducts" mnemonicParsing="false" onAction="#manageProducts" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Products" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <effect>
-            <InnerShadow height="11.5" radius="4.875" width="10.0" />
-         </effect>
-      </Button>
-   </right>
    <bottom>
-      <Button id="btnOrders" fx:id="btnOrders" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Orders" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <effect>
-            <InnerShadow radius="7.25" width="10.0" />
-         </effect>
-      </Button>
+      <AnchorPane prefHeight="110.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="btnCustomers" fx:id="btnCustomers" layoutX="81.0" layoutY="25.0" mnemonicParsing="false" onAction="#manageCustomers" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Customers">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <InnerShadow height="11.5" radius="4.875" width="10.0" />
+               </effect>
+            </Button>
+            <Button id="btnProducts" fx:id="btnProducts" layoutX="425.0" layoutY="25.0" mnemonicParsing="false" onAction="#manageProducts" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Products">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <InnerShadow height="11.5" radius="4.875" width="10.0" />
+               </effect>
+            </Button>
+            <Button id="btnOrders" fx:id="btnOrders" layoutX="768.0" layoutY="25.0" mnemonicParsing="false" onAction="#manageOrders" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: beige;" text="Orders">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <InnerShadow radius="7.25" width="10.0" />
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
    </bottom>
 </BorderPane>

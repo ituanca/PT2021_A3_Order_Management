@@ -8,48 +8,35 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="400.0" style="-fx-background-color: wheat;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.EditProductController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="400.0" style="-fx-background-color: darkslategray;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.EditProductController">
    <children>
-      <Label layoutX="27.0" layoutY="28.0" text="Select product:">
+      <ComboBox id="cbName" fx:id="cbName" layoutX="43.0" layoutY="75.0" onAction="#selectProduct" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: beige;" />
+      <Label id="lblName" fx:id="lblName" layoutX="10.0" layoutY="123.0" text="Name:" textFill="WHITE" visible="false">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ComboBox id="cbName" fx:id="cbName" layoutX="27.0" layoutY="55.0" onAction="#selectProduct" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: beige;" />
-      <Button id="btnEditProduct" fx:id="btnEditProduct" layoutX="284.0" layoutY="48.0" mnemonicParsing="false" onAction="#editProduct" prefHeight="39.0" prefWidth="112.0" style="-fx-background-color: beige;" text="Edit product" visible="false">
-         <font>
-            <Font size="14.0" />
-         </font>
-         <effect>
-            <InnerShadow radius="7.25" width="10.0" />
-         </effect>
-      </Button>
-      <Label layoutX="22.0" layoutY="123.0" text="Name:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField id="tfName" fx:id="tfName" editable="false" layoutX="143.0" layoutY="122.0" prefHeight="29.0" prefWidth="252.0" style="-fx-background-color: beige;">
+      <TextField id="tfName" fx:id="tfName" layoutX="131.0" layoutY="122.0" prefHeight="29.0" prefWidth="259.0" style="-fx-background-color: beige;" visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="22.0" layoutY="168.0" text="Price per unit:">
+      <Label id="lblUnitPrice" fx:id="lblUnitPrice" layoutX="10.0" layoutY="168.0" text="Price per unit:" textFill="WHITE" visible="false">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField id="tfUnitPrice" fx:id="tfUnitPrice" editable="false" layoutX="143.0" layoutY="167.0" prefHeight="29.0" prefWidth="252.0" style="-fx-background-color: beige;">
+      <TextField id="tfUnitPrice" fx:id="tfUnitPrice" layoutX="131.0" layoutY="167.0" prefHeight="29.0" prefWidth="259.0" style="-fx-background-color: beige;" visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="22.0" layoutY="211.0" text="Units in stock:">
+      <Label id="lblUnitsInStock" fx:id="lblUnitsInStock" layoutX="10.0" layoutY="211.0" text="Units in stock:" textFill="WHITE" visible="false">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField id="tfUnitsInStock" fx:id="tfUnitsInStock" editable="false" layoutX="143.0" layoutY="210.0" prefHeight="29.0" prefWidth="252.0" style="-fx-background-color: beige;">
+      <TextField id="tfUnitsInStock" fx:id="tfUnitsInStock" layoutX="131.0" layoutY="210.0" prefHeight="29.0" prefWidth="259.0" style="-fx-background-color: beige;" visible="false">
          <font>
             <Font size="14.0" />
          </font>
@@ -62,5 +49,10 @@
             <InnerShadow radius="7.25" width="10.0" />
          </effect>
       </Button>
+      <Label layoutX="47.0" layoutY="48.0" text="Select product:" textFill="#f8f8f8">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

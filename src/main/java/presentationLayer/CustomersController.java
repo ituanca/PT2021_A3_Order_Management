@@ -26,11 +26,15 @@ public class CustomersController {
     }
 
     public void deleteCustomer(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("deleteCustomer");
+        customersPane.setCenter(view);
     }
 
     public void viewCustomersTable(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("tableCustomers");
+        customersPane.setCenter(view);
     }
 
-    public void goBack(ActionEvent actionEvent) {
-    }
 }

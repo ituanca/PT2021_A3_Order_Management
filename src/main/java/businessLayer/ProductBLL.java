@@ -1,15 +1,9 @@
 package businessLayer;
 
-import businessLayer.validators.EmailValidator;
 import businessLayer.validators.ProductUnitPriceValidator;
-import businessLayer.validators.StudentAgeValidator;
 import businessLayer.validators.Validator;
-import dataAccessLayer.CustomerDAO;
 import dataAccessLayer.ProductDAO;
-import dataAccessLayer.StudentDAO;
-import model.Customer;
 import model.Product;
-import model.Student;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -67,13 +61,21 @@ public class ProductBLL {
             }
         }
         if(ok) {
-            System.out.println("okk");
             return ProductDAO.updateProduct(product);
         }
         return -1;
     }
 
+    public int deleteProduct(Product product) throws SQLException {
+        return ProductDAO.deleteProduct(product);
+    }
+
     public ArrayList<String> getNames() throws SQLException {
         return  ProductDAO.selectNames();
     }
+
+    public ArrayList<Product> getProducts() throws SQLException {
+        return  ProductDAO.findAll();
+    }
+
 }

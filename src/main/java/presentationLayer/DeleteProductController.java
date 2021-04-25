@@ -1,6 +1,5 @@
 package presentationLayer;
 
-import businessLayer.CustomerBLL;
 import businessLayer.ProductBLL;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -12,15 +11,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class EditProductController implements Initializable {
+public class DeleteProductController implements Initializable {
     public ComboBox cbName;
-    public TextField tfName;
-    public TextField tfUnitPrice;
-    public TextField tfUnitsInStock;
-    public Button btnUpdate;
+    public Button btnDelete;
     public Label lblName;
     public Label lblUnitPrice;
     public Label lblUnitsInStock;
+    public TextField tfName;
+    public TextField tfUnitPrice;
+    public TextField tfUnitsInStock;
 
     Product product;
     ProductBLL productBLL;
@@ -37,11 +36,24 @@ public class EditProductController implements Initializable {
         tfName.setVisible(true);
         tfUnitPrice.setVisible(true);
         tfUnitsInStock.setVisible(true);
+        tfName.setEditable(false);
+        tfUnitPrice.setEditable(false);
+        tfUnitsInStock.setEditable(false);
         product = productBLL.findProductByName((String) cbName.getValue());
         tfName.setText(product.getName());
         tfUnitPrice.setText(String.valueOf(product.getUnitPrice()));
         tfUnitsInStock.setText(String.valueOf(product.getUnitsInStock()));
-        btnUpdate.setVisible(true);
+        btnDelete.setVisible(true);
+    }
+
+    public void delete(ActionEvent actionEvent) throws SQLException {
+        product = new Product(product.getId(), getName(), getUnitPrice(), getUnitsInStock());
+        productBLL = new ProductBLL();
+        if (productBLL.deleteProduct(product) == 1) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Product deleted successfully");
+            alert.show();
+        }
     }
 
     @Override
@@ -51,38 +63,6 @@ public class EditProductController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    public void update(ActionEvent actionEvent) throws SQLException {
-        if(checkIfFieldsAreNotEmpty() && checkIfValidData()){
-            product = new Product(product.getId(), getName(), getUnitPrice(), getUnitsInStock());
-            productBLL = new ProductBLL();
-            if(productBLL.updateProduct(product) == 1){
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Product updated successfully");
-                alert.show();
-            }
-        }
-    }
-
-    private boolean checkIfFieldsAreNotEmpty(){
-        if(getName().isEmpty() || tfUnitPrice.getText().equals("") || tfUnitsInStock.getText().equals("")){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Please fill in all the fields");
-            alert.show();
-            return false;
-        }
-        return true;
-    }
-
-    private boolean checkIfValidData(){
-        if(getUnitPrice() == -1 || getUnitsInStock() == -1 || getUnitPrice() < 0 || getUnitsInStock() < 0){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Please fill in valid data");
-            alert.show();
-            return false;
-        }
-        return true;
     }
 
     private String getName() { return tfName.getText(); }
@@ -102,5 +82,4 @@ public class EditProductController implements Initializable {
             return -1;
         }
     }
-
 }
