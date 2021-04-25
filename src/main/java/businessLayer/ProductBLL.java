@@ -1,6 +1,7 @@
 package businessLayer;
 
 import businessLayer.validators.ProductUnitPriceValidator;
+import businessLayer.validators.UnitsInStockValidator;
 import businessLayer.validators.Validator;
 import dataAccessLayer.ProductDAO;
 import model.Product;
@@ -18,6 +19,7 @@ public class ProductBLL {
     public ProductBLL() {
         validators = new ArrayList<Validator<Product>>();
         validators.add(new ProductUnitPriceValidator());
+        validators.add(new UnitsInStockValidator());
 
         productDAO = new ProductDAO();
     }

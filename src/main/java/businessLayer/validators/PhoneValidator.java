@@ -5,7 +5,7 @@ import model.Customer;
 
 import java.util.regex.Pattern;
 
-public class CustomerPhoneValidator implements Validator<Customer>{
+public class PhoneValidator implements Validator<Customer>{
 
     private static final String PHONE_PATTERN = "^(\\+4|)?(07[0-8][0-9]|02[0-9]{2}|03[0-9]{2})(\\s|\\.|\\-)?([0-9]{3}(\\s|\\.|\\-|)){2}$";
 

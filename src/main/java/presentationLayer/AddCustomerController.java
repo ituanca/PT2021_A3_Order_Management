@@ -22,35 +22,13 @@ public class AddCustomerController {
     CustomerBLL customerBLL;
 
     public void addCustomer(ActionEvent actionEvent) throws SQLException {
-        if(checkIfFieldsAreNotEmpty() && checkIfValidCharacters()){
-            customer = new Customer(getName(), getAddress(), getCity(), getPhone(), getEmail());
-            customerBLL = new CustomerBLL();
-            if(customerBLL.insertCustomer(customer) > -1){
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Customer added successfully");
-                alert.show();
-            }
-        }
-    }
-
-    private boolean checkIfFieldsAreNotEmpty(){
-        if(getName().isEmpty() || getAddress().isEmpty() || getCity().isEmpty() || getPhone().isEmpty() || getEmail().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Please fill in all the fields");
+        customer = new Customer(getName(), getAddress(), getCity(), getPhone(), getEmail());
+        customerBLL = new CustomerBLL();
+        if (customerBLL.insertCustomer(customer) > -1) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Customer added successfully");
             alert.show();
-            return false;
         }
-        return true;
-    }
-
-    private boolean checkIfValidCharacters(){
-        if(!getName().matches("^(?![\\s.]+$)[a-zA-Z\\s.]*$") || !getCity().matches("^(?![\\s.]+$)[a-zA-Z\\s.]*$")){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Please fill in valid data");
-            alert.show();
-            return false;
-        }
-        return true;
     }
 
     private String getName() { return tfName.getText(); }

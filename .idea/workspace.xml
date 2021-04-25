@@ -7,49 +7,30 @@
     <list default="true" id="1fb40c30-56f7-43f7-ae52-c5be3f30eb93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/CustomerBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/businessLayer/CustomerBLL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/OrderBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/businessLayer/OrderBLL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/ProductBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/businessLayer/ProductBLL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/StudentBLL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/validators/EmailValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/validators/CustomerEmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/businessLayer/validators/EmailValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/validators/CustomerPhoneValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/businessLayer/validators/PhoneValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/validators/ProductUnitPriceValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/businessLayer/validators/ProductUnitPriceValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/validators/StudentAgeValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccessLayer/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccessLayer/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccessLayer/AbstractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccessLayer/AbstractDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccessLayer/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccessLayer/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccessLayer/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccessLayer/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccessLayer/StudentDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/AddCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/AddCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/CustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/CustomersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/EditCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/EditCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/EditProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/EditProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/addProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/addProduct.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/editCustomer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/editCustomer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/editProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/editProduct.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/start/ReflectionExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/start/ReflectionExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/start/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/start/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/AddProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/fxmlFiles/orders.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/CustomerBLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/businessLayer/CustomerBLL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/OrderBLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/businessLayer/OrderBLL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/ProductBLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/businessLayer/ProductBLL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/StudentBLL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/validators/EmailValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/validators/CustomerEmailValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/validators/CustomerPhoneValidator.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/validators/ProductUnitPriceValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/businessLayer/validators/ProductUnitPriceValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/businessLayer/validators/StudentAgeValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataAccessLayer/CustomerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataAccessLayer/CustomerDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataAccessLayer/AbstractDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataAccessLayer/AbstractDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dataAccessLayer/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataAccessLayer/OrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataAccessLayer/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataAccessLayer/ProductDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataAccessLayer/StudentDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/presentationLayer/AddCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentationLayer/AddCustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentationLayer/CustomersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentationLayer/CustomersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentationLayer/EditCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentationLayer/EditCustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentationLayer/EditProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentationLayer/EditProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/presentationLayer/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentationLayer/ProductsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/start/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/start/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/presentationLayer/AddProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentationLayer/AddProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/presentationLayer/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentationLayer/OrdersController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="D:/Facultate/An 2/Sem 2/PT/Laboratory/pt2021_30422_itu_anca_assignment_3" />
+    <property name="last_opened_file_path" value="D:/Facultate/An 2/Sem 2/PT/Laboratory/pt2021_30422_itu_anca_assignment_2" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

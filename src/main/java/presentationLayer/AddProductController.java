@@ -19,7 +19,7 @@ public class AddProductController {
     ProductBLL productBLL;
 
     public void addProduct(ActionEvent actionEvent) throws SQLException {
-        if(checkIfFieldsAreNotEmpty() && checkIfValidData()){
+        if(checkIfFieldsAreNotEmpty()){
             product = new Product(getName(), getUnitPrice(), getUnitsInStock());
             productBLL = new ProductBLL();
             if(productBLL.insertProduct(product) > -1){
@@ -34,16 +34,6 @@ public class AddProductController {
         if(getName().isEmpty() || tfUnitPrice.getText().equals("") || tfUnitsInStock.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Please fill in all the fields");
-            alert.show();
-            return false;
-        }
-        return true;
-    }
-
-    private boolean checkIfValidData(){
-        if(getUnitPrice() == -1 || getUnitsInStock() == -1 || getUnitPrice() < 0 || getUnitsInStock() < 0){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Please fill in valid data");
             alert.show();
             return false;
         }

@@ -8,28 +8,48 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="400.0" style="-fx-background-color: midnightblue;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="presentationLayer.OrdersController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="480.0" style="-fx-background-color: slategrey;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.OrdersController">
    <children>
-      <Label layoutX="88.0" layoutY="31.0" text="Select customer:" textFill="WHITE">
+      <Label layoutX="41.0" layoutY="22.0" text="Select customer:" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ComboBox id="cbCustomer" fx:id="cbCustomer" layoutX="88.0" layoutY="66.0" onAction="#selectCustomer" prefHeight="25.0" prefWidth="227.0" style="-fx-background-color: beige;" />
-      <Label layoutX="88.0" layoutY="105.0" text="Select product:" textFill="#f8f8f8">
+      <ComboBox id="cbCustomer" fx:id="cbCustomer" layoutX="41.0" layoutY="53.0" onAction="#selectCustomer" prefHeight="25.0" prefWidth="220.0" style="-fx-background-color: beige;" />
+      <Label layoutX="41.0" layoutY="95.0" text="Select product:" textFill="#f8f8f8">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ComboBox id="cbProduct" fx:id="cbProduct" layoutX="88.0" layoutY="139.0" onAction="#selectProduct" prefHeight="25.0" prefWidth="227.0" style="-fx-background-color: beige;" />
-      <Label layoutX="88.0" layoutY="180.0" text="Quantity:" textFill="#f8f8f8">
+      <ComboBox id="cbProduct" fx:id="cbProduct" layoutX="41.0" layoutY="126.0" onAction="#selectProduct" prefHeight="25.0" prefWidth="220.0" style="-fx-background-color: beige;" />
+      <Label layoutX="41.0" layoutY="165.0" text="Quantity:" textFill="#f8f8f8">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField id="tfQuantity" fx:id="tfQuantity" layoutX="88.0" layoutY="215.0" prefHeight="25.0" prefWidth="227.0" style="-fx-background-color: beige;" />
-      <Button id="btnCreateOrder" fx:id="btnCreateOrder" layoutX="154.0" layoutY="295.0" mnemonicParsing="false" onAction="#createOrder" prefHeight="39.0" prefWidth="112.0" style="-fx-background-color: beige;" text="Create order" visible="false">
+      <TextField id="tfQuantity" fx:id="tfQuantity" layoutX="41.0" layoutY="196.0" prefHeight="25.0" prefWidth="220.0" style="-fx-background-color: beige;" />
+      <Button id="btnSeePrice" fx:id="btnSeePrice" layoutX="41.0" layoutY="250.0" mnemonicParsing="false" onAction="#computePrice" prefHeight="27.0" prefWidth="112.0" style="-fx-background-color: beige;" text="Total price:">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <effect>
+            <InnerShadow radius="7.25" width="10.0" />
+         </effect>
+      </Button>
+      <Label id="lblUnitPrice" fx:id="lblUnitPrice" layoutX="298.0" layoutY="77.0" text="Price per unit:" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField id="tfUnitPrice" fx:id="tfUnitPrice" layoutX="298.0" layoutY="101.0" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: beige;" visible="false" />
+      <TextField id="tfPrice" fx:id="tfPrice" editable="false" layoutX="168.0" layoutY="255.0" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: beige;" visible="false" />
+      <Label id="lblUnitsInStock" fx:id="lblUnitsInStock" layoutX="299.0" layoutY="131.0" text="Units in stock:" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField id="tfUnitsInStock" fx:id="tfUnitsInStock" layoutX="298.0" layoutY="153.0" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: beige;" visible="false" />
+      <Button id="btnCreateOrder" fx:id="btnCreateOrder" layoutX="301.0" layoutY="295.0" mnemonicParsing="false" onAction="#createOrder" prefHeight="36.0" prefWidth="143.0" style="-fx-background-color: beige;" text="Create order" visible="false">
          <font>
             <Font size="16.0" />
          </font>

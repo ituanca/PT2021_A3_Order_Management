@@ -44,9 +44,7 @@ public class AbstractDAO<T> {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
         String query = createSelectQuery("id");
-
         try {
             connection = ConnectionFactory.getConnection();
             statement = connection.prepareStatement(query);
@@ -66,7 +64,6 @@ public class AbstractDAO<T> {
 
     private List<T> createObjects(ResultSet resultSet) {
         List<T> list = new ArrayList<T>();
-
         try {
             while (resultSet.next()) {
                 T instance = type.newInstance();

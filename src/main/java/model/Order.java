@@ -2,15 +2,22 @@ package model;
 
 public class Order {
     private int id;
-    private int customerID;
-    private int productID;
+    private String customer;
+    private String product;
     private int quantity;
-    private int price;
+    private double price;
 
-    public Order(int id, int customerID, int productID, int quantity, int price) {
+    public Order(int id, String customer, String product, int quantity, double price) {
         this.id = id;
-        this.customerID = customerID;
-        this.productID = productID;
+        this.customer = customer;
+        this.product = product;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public Order(String customer, String product, int quantity, double price) {
+        this.customer = customer;
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
     }
@@ -23,21 +30,19 @@ public class Order {
         this.id = id;
     }
 
-    public int getCustomerID() {
-        return customerID;
+    public String getCustomer() { return customer; }
+
+    public void setCustomer(String customer) { this.customer = customer; }
+
+    public String getProduct() { return product; }
+
+    public void setProduct(String product) { this.product = product; }
+
+    public double getPrice() {
+        return price;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
-
-    public int getProductID() {
-        return productID;
-    }
-
-    public void setProductID(int productID) {
-        this.productID = productID;
-    }
+    public void setPrice(double price) { this.price = price; }
 
     public int getQuantity() {
         return quantity;
@@ -47,11 +52,4 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
 }

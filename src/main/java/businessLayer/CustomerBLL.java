@@ -1,19 +1,17 @@
 package businessLayer;
 
-import businessLayer.validators.CustomerEmailValidator;
-import businessLayer.validators.CustomerPhoneValidator;
+import businessLayer.validators.CustomerFieldsValidator;
+import businessLayer.validators.EmailValidator;
+import businessLayer.validators.PhoneValidator;
 import businessLayer.validators.Validator;
 import dataAccessLayer.CustomerDAO;
 
-import dataAccessLayer.ProductDAO;
 import model.Customer;
-import model.Product;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CustomerBLL {
@@ -24,8 +22,9 @@ public class CustomerBLL {
 
     public CustomerBLL() {
         validators = new ArrayList<Validator<Customer>>();
-        validators.add(new CustomerPhoneValidator());
-        validators.add(new CustomerEmailValidator());
+        validators.add(new CustomerFieldsValidator());
+        validators.add(new PhoneValidator());
+        validators.add(new EmailValidator());
 
         customerDAO = new CustomerDAO();
     }
