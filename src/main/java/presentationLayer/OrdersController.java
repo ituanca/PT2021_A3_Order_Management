@@ -2,6 +2,7 @@ package presentationLayer;
 
 import businessLayer.CustomerBLL;
 import businessLayer.OrderBLL;
+import businessLayer.PDFGenerator;
 import businessLayer.ProductBLL;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -34,6 +35,7 @@ public class OrdersController implements Initializable {
     ProductBLL productBLL;
     Order order;
     OrderBLL orderBLL;
+    PDFGenerator pdfGenerator = new PDFGenerator();
 
     public void createOrder(ActionEvent actionEvent) throws SQLException {
         order = new Order(customer.getName(), product.getName(), getQuantity(), getTotalPrice());
@@ -42,6 +44,11 @@ public class OrdersController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setContentText("Order created successfully");
             alert.show();
+            product.setUnitsInStock(product.getUnitsInStock() - getQuantity());
+            productBLL.updateProduct(product);
+
+            order = orderBLL.getLastOrder();
+            pdfGenerator.generatePDF(order, customer, product);
         }
     }
 

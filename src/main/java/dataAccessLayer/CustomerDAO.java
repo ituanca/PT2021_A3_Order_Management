@@ -100,7 +100,6 @@ public class CustomerDAO {
                 String email = resultSet.getString("email");
 
                 Customer customer = new Customer( id, name, address, city, phone, email);
-                System.out.println(customer.toString());
                 customers.add(customer);
             }
         } catch (SQLException e) {
@@ -133,7 +132,6 @@ public class CustomerDAO {
             String email = resultSet.getString("email");
 
             customer = new Customer( id, name, address, city, phone, email);
-
         } catch (SQLException e) {
             LOGGER.log(Level.WARNING,"CustomerDAO:findByName " + e.getMessage());
         } finally {
@@ -162,7 +160,6 @@ public class CustomerDAO {
             String email = resultSet.getString("email");
 
             customer = new Customer( name, address, city, phone, email);
-
         } catch (SQLException e) {
             LOGGER.log(Level.WARNING,"CustomerDAO:findById " + e.getMessage());
         } finally {

@@ -2,9 +2,9 @@ package dataAccessLayer;
 
 import connection.ConnectionFactory;
 import model.Order;
-import model.Product;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,6 +12,7 @@ public class OrderDAO {
 
     protected static final Logger LOGGER = Logger.getLogger(OrderDAO.class.getName());
     private static final String insertStatementString = "INSERT INTO orders (customer,product,quantity,price)" + " VALUES (?,?,?,?)";
+    private final static String findLastRowStatementString = "SELECT * FROM orders ORDER BY id DESC LIMIT 1";
 
     public static int createOrder(Order order) throws SQLException {
         Connection dbConnection = ConnectionFactory.getConnection();
@@ -39,7 +40,36 @@ public class OrderDAO {
         }
         return insertedId;
     }
-//
+
+    public static Order getLastOrder() throws SQLException {
+        Order order = null;
+        Connection dbConnection = ConnectionFactory.getConnection();
+        PreparedStatement findLastRowStatement = null;
+        ResultSet resultSet = null;
+        try {
+            findLastRowStatement = dbConnection.prepareStatement(findLastRowStatementString);
+            resultSet = findLastRowStatement.executeQuery();
+            resultSet.next();
+
+            int id = resultSet.getInt("id");
+            String customer = resultSet.getString("customer");
+            String product = resultSet.getString("product");
+            int quantity = resultSet.getInt("quantity");
+            double price = resultSet.getDouble("price");
+
+            order = new Order(id, customer, product, quantity, price);
+
+        } catch (SQLException e) {
+            LOGGER.log(Level.WARNING,"OrderDAO:find all " + e.getMessage());
+            System.out.println("OrderDAO:find all " + e.getMessage());
+        } finally {
+            ConnectionFactory.close(resultSet);
+            ConnectionFactory.close(findLastRowStatement);
+            ConnectionFactory.close(dbConnection);
+        }
+        return order;
+    }
+
 //    public Order findById(int orderID) throws SQLException {
 //
 //        Order order = null;

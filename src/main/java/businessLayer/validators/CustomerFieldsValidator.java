@@ -13,12 +13,12 @@ public class CustomerFieldsValidator implements Validator<Customer>{
             alert.show();
             return false;
         }
-//        if(!customer.getName().matches("^(?![\\s.]+$)[a-zA-Z\\s.]*$") || !customer.getCity().matches("^(?![\\s.]+$)[a-zA-Z\\s.]*$")){
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setContentText("Please fill in valid data");
-//            alert.show();
-//            return false;
-//        }
+        if(!customer.getName().matches("^(?![\\s.]+$)[a-zA-Z\\s.-]*$") || !customer.getCity().matches("^(?![\\s.]+$)[a-zA-Z\\s.-]*$")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Please fill in valid data");
+            alert.show();
+            return false;
+        }
         return true;
     }
 }

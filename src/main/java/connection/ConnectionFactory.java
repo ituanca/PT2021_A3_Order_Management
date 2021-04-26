@@ -26,7 +26,7 @@ public class ConnectionFactory {
        try{
            connection = DriverManager.getConnection(DBURL, USER, PASSWORD);
        }catch (SQLException e) {
-           //System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+           System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
            LOGGER.log(Level.WARNING, "An error occurred while trying to connect to the database");
            e.printStackTrace();
        } catch (Exception e) {

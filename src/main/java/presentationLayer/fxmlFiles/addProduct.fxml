@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="400.0" style="-fx-background-color: darkslategray;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.AddProductController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="400.0" style="-fx-background-color: wheat;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.AddProductController">
    <children>
       <Button id="btnAddProduct" fx:id="btnAddProduct" layoutX="138.0" layoutY="291.0" mnemonicParsing="false" onAction="#addProduct" style="-fx-background-color: beige;" text="Add product">
          <font>
@@ -17,17 +17,17 @@
             <InnerShadow radius="7.25" width="10.0" />
          </effect>
       </Button>
-      <Label layoutX="14.0" layoutY="63.0" text="Name:" textFill="WHITE">
+      <Label layoutX="14.0" layoutY="63.0" text="Name:" textFill="BLACK">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="103.0" text="Price per unit:" textFill="WHITE">
+      <Label layoutX="14.0" layoutY="103.0" text="Price per unit:" textFill="BLACK">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="140.0" text="Units in stock:" textFill="WHITE">
+      <Label layoutX="14.0" layoutY="140.0" text="Units in stock:" textFill="BLACK">
          <font>
             <Font size="18.0" />
          </font>

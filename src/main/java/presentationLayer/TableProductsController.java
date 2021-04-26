@@ -20,6 +20,7 @@ public class TableProductsController implements Initializable {
 
     public TableView tableView;
     public ScrollPane scrollPane;
+
     ProductBLL productBLL;
     ArrayList<TableColumn<Product, String>> columns = new ArrayList<>();
 
@@ -28,25 +29,13 @@ public class TableProductsController implements Initializable {
         try {
             tableView = new TableView<Product>();
             ObservableList<Product> products = getProducts();
-            int index = 0;
-            for (Field field : products.get(0).getClass().getDeclaredFields()) {
-                field.setAccessible(true);
-                try {
-                    columns.add(new TableColumn<>(field.getName()));
-                    columns.get(index).setCellValueFactory(new PropertyValueFactory<>(field.getName()));
-                    index++;
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                }
-            }
+            ObjectsController objectsController = new ObjectsController();
+            objectsController.createTable(products, columns, scrollPane, tableView);
+
             columns.get(0).prefWidthProperty().setValue(40);
             columns.get(1).prefWidthProperty().setValue(170);
             columns.get(2).prefWidthProperty().setValue(80);
             columns.get(3).prefWidthProperty().setValue(80);
-
-            tableView.getColumns().addAll(columns);
-            tableView.setItems(products);
-            scrollPane.setContent(tableView);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

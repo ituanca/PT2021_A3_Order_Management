@@ -1,17 +1,21 @@
 package businessLayer;
 
-import businessLayer.validators.Validator;
 import dataAccessLayer.OrderDAO;
-import dataAccessLayer.ProductDAO;
+
 import model.Order;
-import model.Product;
+
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class OrderBLL {
 
     public int createOrder(Order order) throws SQLException {
          return OrderDAO.createOrder(order);
+    }
+
+    public Order getLastOrder() throws SQLException {
+        return OrderDAO.getLastOrder();
     }
 
 }
