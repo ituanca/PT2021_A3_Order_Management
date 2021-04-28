@@ -1,0 +1,61 @@
+package presentationLayer.controller;
+
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import presentationLayer.view.FxmlLoader;
+
+/**
+ *  Controller class used for products management stage
+ *  @author Anca
+ */
+public class ProductsController {
+
+    public BorderPane productsPane;
+    public Button btnAddProduct;
+    public Button btnEditProduct;
+    public Button btnDeleteProduct;
+    public Button btnViewProductsTable;
+
+    /**
+     * Method to open window where user can insert data of a new product
+     * @param actionEvent
+     */
+    public void addProduct(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("addProduct");
+        productsPane.setCenter(view);
+    }
+
+    /**
+     * Method to open window where user can update data of an existing product
+     * @param actionEvent
+     */
+    public void editProduct(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("editProduct");
+        productsPane.setCenter(view);
+    }
+
+    /**
+     * Method to open window where user can select a product to be deleted from the table
+     * @param actionEvent
+     */
+    public void deleteProduct(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("deleteProduct");
+        productsPane.setCenter(view);
+    }
+
+    /**
+     * Method to open window where user can view all data in the table
+     * @param actionEvent
+     */
+    public void viewProductsTable(ActionEvent actionEvent) {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("tableProducts");
+        productsPane.setCenter(view);
+    }
+
+}

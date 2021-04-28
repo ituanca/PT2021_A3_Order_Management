@@ -35,10 +35,20 @@ public class ConnectionFactory {
        return connection;
     }
 
+    /**
+     * Method to create connection
+     * @return
+     * @throws SQLException
+     */
     public static Connection getConnection() throws SQLException {
         return singleInstance.createConnection();
     }
 
+    /**
+     *  Method to close connection
+     * @param connection
+     * @throws SQLException
+     */
     public static void close(Connection connection) throws SQLException {
         if(connection!=null){
             try{
@@ -49,6 +59,11 @@ public class ConnectionFactory {
         }
     }
 
+    /**
+     * Method to close statement
+     * @param statement
+     * @throws SQLException
+     */
     public static void close(Statement statement) throws SQLException {
         if(statement!=null) {
             try {
@@ -59,6 +74,11 @@ public class ConnectionFactory {
         }
     }
 
+    /**
+     * Method to close result set
+     * @param resultSet
+     * @throws SQLException
+     */
     public static void close(ResultSet resultSet) throws SQLException {
         if(resultSet!=null) {
             try {

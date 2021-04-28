@@ -8,6 +8,15 @@ public class Customer {
     private String phone;
     private String email;
 
+    /**
+     * Constructor for object of class Customer
+     * @param id
+     * @param name
+     * @param address
+     * @param city
+     * @param phone
+     * @param email
+     */
     public Customer(int id, String name, String address, String city, String phone, String email) {
         this.id = id;
         this.name = name;
@@ -17,6 +26,14 @@ public class Customer {
         this.email = email;
     }
 
+    /**
+     * Constructor for object of class Customer
+     * @param name
+     * @param address
+     * @param city
+     * @param phone
+     * @param email
+     */
     public Customer(String name, String address, String city, String phone, String email) {
         this.name = name;
         this.address = address;
@@ -25,39 +42,52 @@ public class Customer {
         this.email = email;
     }
 
+    /**
+     * getter for customer id
+     * @return int id
+     */
     public int getId() { return id; }
 
+    /**
+     * setter for customer id
+     * @param id
+     */
     public void setId(int id) { this.id = id; }
 
+    /**
+     * getter for customer name
+     * @return String name
+     */
     public String getName() { return name; }
 
+    /**
+     * setter for customer name
+     * @param name
+     */
     public void setName(String name) { this.name = name; }
 
+    /**
+     * getter for customer address
+     * @return String address
+     */
     public String getAddress() { return address; }
 
-    public void setAddress(String address) { this.address = address; }
-
+    /**
+     *  getter for customer city
+     * @return String city
+     */
     public String getCity() { return city; }
 
-    public void setCity(String city) { this.city = city; }
-
+    /**
+     * getter for customer phone
+     * @return String phone
+     */
     public String getPhone() { return phone; }
 
-    public void setPhone(String phone) { this.phone = phone; }
-
+    /**
+     * getter for customer email
+     * @return String email
+     */
     public String getEmail() { return email; }
 
-    public void setEmail(String email) { this.email = email; }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
 }

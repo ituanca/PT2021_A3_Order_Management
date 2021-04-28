@@ -7,6 +7,14 @@ public class Order {
     private int quantity;
     private double price;
 
+    /**
+     * Constructor for object of class Order
+     * @param id
+     * @param customer
+     * @param product
+     * @param quantity
+     * @param price
+     */
     public Order(int id, String customer, String product, int quantity, double price) {
         this.id = id;
         this.customer = customer;
@@ -15,6 +23,13 @@ public class Order {
         this.price = price;
     }
 
+    /**
+     * Constructor for object of class Order
+     * @param customer
+     * @param product
+     * @param quantity
+     * @param price
+     */
     public Order(String customer, String product, int quantity, double price) {
         this.customer = customer;
         this.product = product;
@@ -22,34 +37,62 @@ public class Order {
         this.price = price;
     }
 
+    /**
+     * getter for order id
+     * @return int id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * setter for order id
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * getter for customer
+     * @return
+     */
     public String getCustomer() { return customer; }
 
+    /**
+     * setter for customer
+     * @param customer
+     */
     public void setCustomer(String customer) { this.customer = customer; }
 
+    /**
+     * getter for product
+     * @return
+     */
     public String getProduct() { return product; }
 
+    /**
+     * setter for product
+     * @param product
+     */
     public void setProduct(String product) { this.product = product; }
 
-    public double getPrice() {
-        return price;
-    }
+    /**
+     * getter for price
+     * @return
+     */
+    public double getPrice() { return price; }
 
+    /**
+     * setter for price
+     * @param price
+     */
     public void setPrice(double price) { this.price = price; }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+    /**
+     * getter for quantity
+     * @return
+     */
+    public int getQuantity() { return quantity; }
 
 }

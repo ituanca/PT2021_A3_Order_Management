@@ -16,6 +16,12 @@ import java.io.OutputStream;
 public class PDFGenerator {
     Document document = new Document();
 
+    /**
+     *
+     * @param order
+     * @param customer
+     * @param product
+     */
     public void generatePDF(Order order, Customer customer, Product product){
         try {
             String FILE = "src\\main\\java\\pdf\\orderDetails.pdf";

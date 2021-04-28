@@ -14,6 +14,12 @@ public class OrderDAO {
     private static final String insertStatementString = "INSERT INTO orders (customer,product,quantity,price)" + " VALUES (?,?,?,?)";
     private final static String findLastRowStatementString = "SELECT * FROM orders ORDER BY id DESC LIMIT 1";
 
+    /**
+     * Method to insert a new order in the orders table
+     * @param order object to be inserted in the orders table
+     * @return returns -1 if the insertion failed or the id of the customer otherwise
+     * @throws SQLException
+     */
     public static int createOrder(Order order) throws SQLException {
         Connection dbConnection = ConnectionFactory.getConnection();
         PreparedStatement insertStatement = null;
@@ -41,6 +47,11 @@ public class OrderDAO {
         return insertedId;
     }
 
+    /**
+     * Method to get the last added order in table
+     * @return an object of class Order is returned
+     * @throws SQLException
+     */
     public static Order getLastOrder() throws SQLException {
         Order order = null;
         Connection dbConnection = ConnectionFactory.getConnection();
